@@ -1,12 +1,11 @@
 import React from "react";
-import { Hello, Message } from "./component/Es1/Hello";
+import { Welcome } from "./component/Es2/Welcome";
 
 class App extends React.Component {
   render() {
     return (
       <>
-        <Hello />
-        <Message />
+        <Welcome name="Luca" />
       </>
     );
   }
