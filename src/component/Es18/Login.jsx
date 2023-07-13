@@ -1,7 +1,7 @@
 import React from "react";
 import { Welcome } from "./Welcome6";
 
-class InteractiveWelcome extends React.Component {
+class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -24,4 +24,4 @@ class InteractiveWelcome extends React.Component {
   }
 }
 
-export default InteractiveWelcome;
+export default Login;
