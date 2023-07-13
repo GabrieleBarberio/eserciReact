@@ -1,5 +1,5 @@
 import React from "react";
-import { Counter } from "./component/Es13/Counter";
+import { Counter } from "./component/Es14/Counter";
 //name={<strong>Luca</strong>} passato come props per l'e5
 class App extends React.Component {
   render() {
