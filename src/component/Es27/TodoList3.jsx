@@ -4,49 +4,40 @@ class TodoList3 extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      //dichiarazione state
       todos: [],
       inputValue: "",
     };
   }
 
   handleInputChange = (event) => {
-    this.setState({ inputValue: event.target.value }); //handle dell'input per controllare
+    this.setState({ inputValue: event.target.value });
   };
 
   handleAddItem = () => {
     const { inputValue, todos } = this.state;
     if (inputValue !== "") {
-      // controllo che non vengano aggiunte task come stringhe vuote
       this.setState({
-        todos: [...todos, inputValue], // aggiungo la nuova task senza sovrascrivere
-        inputValue: "", //resetto l'input
+        todos: [...todos, inputValue],
+        inputValue: "",
       });
     }
   };
 
   handleReset = () => this.setState({ todos: [], inputValue: "" });
+
   handleDelete = (index) => {
-    const { todos } = this.state; //instazio todo in questo scope
-    const updatedTodos = todos.filter((_, i) => i !== index); // salvo in una variabile intermedia il nuovo array
-    this.setState({ todos: updatedTodos }); //aggiorno lo state dopo l'eliminazione
+    const { todos } = this.state;
+    const updatedTodos = todos.filter((_, i) => i !== index);
+    this.setState({ todos: updatedTodos });
   };
+
   render() {
     const { todos, inputValue } = this.state;
+    const { render } = this.props;
 
     return (
       <div>
-        <ul>
-          {todos &&
-            todos.map((todo, i) => {
-              return (
-                <li key={i}>
-                  {todo}{" "}
-                  <button onClick={() => this.handleDelete(i)}>Delete</button>
-                </li>
-              );
-            })}
-        </ul>
+        {render(todos, this.handleDelete)}
         <div>
           <input
             type="text"

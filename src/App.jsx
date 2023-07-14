@@ -8,6 +8,7 @@ import TodoList from "./component/Es23/TodoList";
 import TodoList1 from "./component/Es25/TodoList1";
 import TodoList2 from "./component/Es26/TodoList2";
 import TodoList3 from "./component/Es27/TodoList3";
+import { LanguageSelector } from "./component/Es28/LanguageSelector";
 //name={<strong>Luca</strong>} passato come props per l'e5
 class App extends React.Component {
   constructor(props) {
@@ -48,6 +49,7 @@ class App extends React.Component {
             </ul>
           )}
         />
+        <LanguageSelector />
       </>
     );
   }
