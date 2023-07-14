@@ -4,6 +4,7 @@ import { ClickCounter } from "./component/Es16/ClickCounter";
 import ClickTracker from "./component/Es17/ClickTracker";
 import Login from "./component/Es20/Login";
 import UncontrolledLogin from "./component/Es21/UncontrolledLogin";
+import TodoList from "./component/Es23/TodoList";
 //name={<strong>Luca</strong>} passato come props per l'e5
 class App extends React.Component {
   constructor(props) {
@@ -29,6 +30,7 @@ class App extends React.Component {
         <ClickTracker />
         <Login onLogin={this.handleLogin} />
         <UncontrolledLogin />
+        <TodoList />
       </>
     );
   }
