@@ -6,6 +6,7 @@ import Login from "./component/Es20/Login";
 import UncontrolledLogin from "./component/Es21/UncontrolledLogin";
 import TodoList from "./component/Es23/TodoList";
 import TodoList1 from "./component/Es25/TodoList1";
+import TodoList2 from "./component/Es26/TodoList2";
 //name={<strong>Luca</strong>} passato come props per l'e5
 class App extends React.Component {
   constructor(props) {
@@ -34,6 +35,7 @@ class App extends React.Component {
         <TodoList />
         <span>Todo es 25</span>
         <TodoList1 />
+        <TodoList2 />
       </>
     );
   }
