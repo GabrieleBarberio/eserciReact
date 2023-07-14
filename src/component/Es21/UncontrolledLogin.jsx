@@ -40,7 +40,7 @@ class UncontrolledLogin extends Component {
       <form onChange={this.getDisabledValue} onSubmit={this.handleSubmit}>
         <div>
           <label htmlFor="username">Username:</label>
-          <input type="text" autoFocus id="username" ref={this.usernameRef} />
+          <input type="text" id="username" ref={this.usernameRef} />
         </div>
         <div>
           <label htmlFor="password">Password:</label>
