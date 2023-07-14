@@ -11,6 +11,7 @@ import TodoList3 from "./component/Es27/TodoList3";
 import { LanguageSelector } from "./component/Es28/LanguageSelector";
 import { ClickCounterFunc } from "./component/Es30/ClickCounterFunc";
 import { LoginFunc } from "./component/ES31/LoginFunc";
+import { ClickCounterFunc2 } from "./component/ES32/ClickCounterFunc2";
 //name={<strong>Luca</strong>} passato come props per l'e5
 class App extends React.Component {
   constructor(props) {
@@ -26,6 +27,10 @@ class App extends React.Component {
       username: username,
       password: password,
     });
+  };
+
+  onCounterChange = (count) => {
+    console.log(count);
   };
 
   render() {
@@ -58,6 +63,7 @@ class App extends React.Component {
         </span>
         <ClickCounterFunc />
         <LoginFunc />
+        <ClickCounterFunc2 onCounterChange={this.onCounterChange} />
       </>
     );
   }
