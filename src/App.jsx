@@ -19,6 +19,8 @@ import CounterHook from "./component/es36/CounterHook";
 import { FormHook } from "./component/es37/FormHook";
 import { GithubUserHook } from "./component/es38/GithubUserHook";
 import { GithubUserHook2 } from "./component/es39/GithubUserHook2";
+import FormCar from "./component/es40/FormCar";
+import FromCar from "./component/es40/FormCar";
 
 //name={<strong>Luca</strong>} passato come props per l'e5
 class App extends React.Component {
@@ -27,6 +29,11 @@ class App extends React.Component {
     this.state = {
       username: "",
       password: "",
+      carData: {
+        model: "",
+        year: "",
+        color: "",
+      },
     };
   }
 
@@ -37,6 +44,7 @@ class App extends React.Component {
     });
   };
 
+  handleSub = (e) => e.preventDefault();
   onCounterChange = (count) => {
     console.log(count);
   };
@@ -79,6 +87,10 @@ class App extends React.Component {
         <FormHook />
         <GithubUserHook />
         <GithubUserHook2 user="GabrieleBarberio" />
+        <FromCar
+          initialValue={{ model: "audi", year: 2002, color: "black" }}
+          handleSub={this.handleSub}
+        />
       </>
     );
   }
