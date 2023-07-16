@@ -14,6 +14,7 @@ import { LoginFunc } from "./component/ES31/LoginFunc";
 import { ClickCounterFunc2 } from "./component/ES32/ClickCounterFunc2";
 import { CounterFunc } from "./component/ES33/CounterFunc";
 import { GithubUser } from "./component/ES34/GithubUser";
+import GithubUserList from "./component/Es35/GithubUserList";
 //name={<strong>Luca</strong>} passato come props per l'e5
 class App extends React.Component {
   constructor(props) {
@@ -68,6 +69,7 @@ class App extends React.Component {
         <ClickCounterFunc2 onCounterChange={this.onCounterChange} />
         <CounterFunc />
         <GithubUser username="GabrieleBarberio" />
+        <GithubUserList />
       </>
     );
   }

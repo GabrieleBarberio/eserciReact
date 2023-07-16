@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 export const GithubUser = ({ username }) => {
   const [data, setData] = useState(null);
+  const [err, setErr] = useState(null);
 
   const fetchData = async () => {
     if (!data) {
@@ -13,7 +14,10 @@ export const GithubUser = ({ username }) => {
           const res = await response.json();
           setData(res);
         }
-      } catch (error) {}
+      } catch (error) {
+        console.log(error);
+        setErr(error);
+      }
     }
   };
   useEffect(() => {
@@ -24,7 +28,7 @@ export const GithubUser = ({ username }) => {
     <>
       <div>
         <span>
-          user: {data && data.login}, id: {data && data.id}
+          {err ? err : `user: ${data && data.login}, id: ${data && data.id}`}
         </span>
       </div>
     </>
