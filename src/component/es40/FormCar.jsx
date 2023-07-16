@@ -1,6 +1,7 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 
 function FromCar({ initialValue }) {
+  const [isFirstChange, setIsFirstChange] = useState(true);
   const formRef = useRef();
 
   const handleSubmit = (event) => {
@@ -13,19 +14,24 @@ function FromCar({ initialValue }) {
   };
 
   const handleFormReset = () => {
-    formRef.current.elements.model.value = "";
-    formRef.current.elements.year.value = 0;
-    formRef.current.elements.color.value = "";
+    if (isFirstChange) {
+      initialValue.model = "";
+      initialValue.year = 0;
+      initialValue.color = "";
+      setIsFirstChange(false);
+    } else {
+      return;
+    }
   };
 
   useEffect(() => {
-    handleFormReset();
+    formRef.current.reset();
   }, [initialValue]);
 
   return (
     <div>
       <h1>Car Details Form</h1>
-      <form ref={formRef} onSubmit={handleSubmit}>
+      <form ref={formRef} onChange={handleFormReset} onSubmit={handleSubmit}>
         <div>
           <label htmlFor="modelInput">Model:</label>
           <input
