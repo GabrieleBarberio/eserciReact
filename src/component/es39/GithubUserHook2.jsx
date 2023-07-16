@@ -1,7 +1,7 @@
-import { useFetch } from "./useFetch";
+import { useFetch2 } from "./useFetch2";
 
-export const GithubUserHook = () => {
-  const [data, setData] = useFetch("GabrieleBarberio");
+export const GithubUserHook2 = ({ user }) => {
+  const [data, setData, err, loading] = useFetch2(user);
 
   return (
     <div>

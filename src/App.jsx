@@ -18,6 +18,7 @@ import GithubUserList from "./component/Es35/GithubUserList";
 import CounterHook from "./component/es36/CounterHook";
 import { FormHook } from "./component/es37/FormHook";
 import { GithubUserHook } from "./component/es38/GithubUserHook";
+import { GithubUserHook2 } from "./component/es39/GithubUserHook2";
 
 //name={<strong>Luca</strong>} passato come props per l'e5
 class App extends React.Component {
@@ -77,6 +78,7 @@ class App extends React.Component {
         <CounterHook />
         <FormHook />
         <GithubUserHook />
+        <GithubUserHook2 user="GabrieleBarberio" />
       </>
     );
   }
