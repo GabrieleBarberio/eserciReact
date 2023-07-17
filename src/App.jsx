@@ -24,6 +24,7 @@ import FromCar from "./component/es40/FormCar";
 
 import { Display } from "./component/es41/DisplayLanguage";
 import CounterHook2 from "./component/es42/CounterHook";
+import { FilteredList } from "./component/es43/FilteredList";
 
 //name={<strong>Luca</strong>} passato come props per l'e5
 class App extends React.Component {
@@ -39,6 +40,16 @@ class App extends React.Component {
       },
     };
   }
+
+  students = [
+    { name: "Gabriele", id: 1, age: 11 },
+    { name: "Antonio", id: 2, age: 22 },
+    { name: "Andrea", id: 3, age: 12 },
+    { name: "Gian", id: 4, age: 18 },
+    { name: "Simone", id: 5, age: 21 },
+    { name: "Davide", id: 6, age: 20 },
+    { name: "Nicola", id: 7, age: 16 },
+  ];
 
   handleLogin = ({ username, password }) => {
     this.setState({
@@ -96,6 +107,7 @@ class App extends React.Component {
         />
         <Display />
         <CounterHook2 />
+        <FilteredList list={this.students} />
       </>
     );
   }
