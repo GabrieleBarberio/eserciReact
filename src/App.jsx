@@ -22,6 +22,8 @@ import { GithubUserHook2 } from "./component/es39/GithubUserHook2";
 import FormCar from "./component/es40/FormCar";
 import FromCar from "./component/es40/FormCar";
 
+import { Display } from "./component/es41/DisplayLanguage";
+
 //name={<strong>Luca</strong>} passato come props per l'e5
 class App extends React.Component {
   constructor(props) {
@@ -91,6 +93,7 @@ class App extends React.Component {
           initialValue={{ model: "audi", year: 2002, color: "black" }}
           handleSub={this.handleSub}
         />
+        <Display />
       </>
     );
   }
