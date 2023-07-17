@@ -23,6 +23,7 @@ import FormCar from "./component/es40/FormCar";
 import FromCar from "./component/es40/FormCar";
 
 import { Display } from "./component/es41/DisplayLanguage";
+import CounterHook2 from "./component/es42/CounterHook";
 
 //name={<strong>Luca</strong>} passato come props per l'e5
 class App extends React.Component {
@@ -94,6 +95,7 @@ class App extends React.Component {
           handleSub={this.handleSub}
         />
         <Display />
+        <CounterHook2 />
       </>
     );
   }

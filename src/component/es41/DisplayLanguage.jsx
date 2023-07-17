@@ -16,13 +16,15 @@ export const Display = () => {
       </select>
       <LanguageContext.Provider value={language}>
         <span>
-          {language === "en" ? "this is the selected context: " + language : ""}
+          {language === "en"
+            ? "this is the selected context: " + language
+            : null}
           {language === "it"
             ? "questo è il contesto selezionato: " + language
-            : ""}
+            : null}
           {language === "es"
             ? "este es el contexto seleccionado: " + language
-            : ""}
+            : null}
         </span>
       </LanguageContext.Provider>
     </>
