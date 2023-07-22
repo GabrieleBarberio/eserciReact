@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
-import { useParams, Outlet } from "react-router-dom";
 
-export const GithubUser = () => {
-  const [data, setData] = useState(null);
+export const useFetch2 = (username) => {
+  const [data, setData] = useState();
+  const [loading, setLoading] = useState(true);
   const [err, setErr] = useState(null);
-  const { username } = useParams();
 
   const fetchData = async () => {
+    setLoading(true);
+    setErr(null);
     if (!data) {
       try {
         const response = await fetch(
@@ -19,6 +20,8 @@ export const GithubUser = () => {
       } catch (error) {
         console.log(error);
         setErr(error);
+      } finally {
+        setLoading(false);
       }
     }
   };
@@ -26,13 +29,5 @@ export const GithubUser = () => {
     fetchData();
   }, []);
 
-  return (
-    <>
-      <div>
-        <span>
-          {err ? err : `user: ${data && data.login}, id: ${data && data.id}`}
-        </span>
-      </div>
-    </>
-  );
+  return [data, setData, fetchData, err, loading];
 };
