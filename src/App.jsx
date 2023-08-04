@@ -20,10 +20,22 @@ class App extends React.Component {
           <Route path="/counter" element={<CounterHook2 />} />
           <Route path="/users" component={<User />} />
           <Route path="users/:username" element={<GithubUser />} />
+          <Route path="*" element={<h1>Not Found</h1>} />
         </Routes>
       </>
     );
   }
+}
+
+{
+  /* <Routes>
+<Route path="/" element={<Home />} />
+<Route path="/counter" element={<CounterHook2 />} />
+<Route path="/users" element={<User />}>
+  <Route index element={<GithubUserList />} />                             ----> esnested route
+</Route>
+<Route path="*" element={<h1>Not Found</h1>} />
+</Routes> */
 }
 
 // Browser Router Wrappa tutto in main ho aggiunto una mini nav velocissima e ho diviso in home tutti
